@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
-import { type } from 'arktype';
-import { arktypeValidator } from '@hono/arktype-validator'
+
+import { z } from 'zod';
+import { zValidator } from '@hono/zod-validator';
 
 const app = new Hono()
 
@@ -8,19 +9,16 @@ app.get('/', (c) => {
 	return c.text('Hello Hono!')
 })
 
-const _apiUserRequest = type({
-	limit: 'number?',
+const _apiUserRequest = z.object({
+	limit: z.number().optional()
 });
 
 app.get('/api/user',
-	arktypeValidator('query', _apiUserRequest),
+	zValidator('query', _apiUserRequest),
 	(c) => {
 		const { limit } = c.req.valid('query');
 
-		const users = [{  name: 'taro' }, { name: 'jiro' }];
-		const filteredUsers = limit ? users.slice(0, limit) : users;
-
-		return c.json(filteredUsers);
+		return c.json({ limit });
 	}
 );
 

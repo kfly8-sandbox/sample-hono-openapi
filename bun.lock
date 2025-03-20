@@ -5,10 +5,13 @@
       "name": "sample-hono-openapi",
       "dependencies": {
         "@hono/arktype-validator": "^2.0.0",
+        "@hono/valibot-validator": "^0.5.2",
         "@hono/zod-validator": "^0.4.3",
+        "@valibot/to-json-schema": "^1.0.0",
         "arktype": "^2.1.10",
         "hono": "^4.7.4",
         "hono-openapi": "^0.4.6",
+        "valibot": "^1.0.0",
         "zod": "^3.24.2",
         "zod-openapi": "^4.2.3",
       },
@@ -26,6 +29,8 @@
 
     "@hono/arktype-validator": ["@hono/arktype-validator@2.0.0", "", { "peerDependencies": { "arktype": "^2.0.0-dev.14", "hono": "*" } }, "sha512-ICNZrK6Qcw6gyPfW53ONXI4JomRcks0fQhqzn9EWsfr6nlL6BNXQ96vIgVDU8qimcbJ2m3GJFAqgzOvWbZk3jw=="],
 
+    "@hono/valibot-validator": ["@hono/valibot-validator@0.5.2", "", { "peerDependencies": { "hono": ">=3.9.0", "valibot": "^1.0.0 || ^1.0.0-beta.4 || ^1.0.0-rc" } }, "sha512-WbTr8PCFNAME0ale62rmmq+E8bGp5a7VPiVNmNT+Ue12GJE3Ax+CWBGtHhR0TzAEiloPvJND3IbjHIgtNtsqhw=="],
+
     "@hono/zod-validator": ["@hono/zod-validator@0.4.3", "", { "peerDependencies": { "hono": ">=3.9.0", "zod": "^3.19.1" } }, "sha512-xIgMYXDyJ4Hj6ekm9T9Y27s080Nl9NXHcJkOvkXPhubOLj8hZkOL8pDnnXfvCf5xEE8Q4oMFenQUZZREUY2gqQ=="],
 
     "@jsdevtools/ono": ["@jsdevtools/ono@7.1.3", "", {}, "sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg=="],
@@ -37,6 +42,8 @@
     "@types/node": ["@types/node@22.13.10", "", { "dependencies": { "undici-types": "~6.20.0" } }, "sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw=="],
 
     "@types/ws": ["@types/ws@8.5.14", "", { "dependencies": { "@types/node": "*" } }, "sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw=="],
+
+    "@valibot/to-json-schema": ["@valibot/to-json-schema@1.0.0", "", { "peerDependencies": { "valibot": "^1.0.0" } }, "sha512-/9crJgPptVsGCL6X+JPDQyaJwkalSZ/52WuF8DiRUxJgcmpNdzYRfZ+gqMEP8W3CTVfuMWPqqvIgfwJ97f9Etw=="],
 
     "argparse": ["argparse@2.0.1", "", {}, "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="],
 
@@ -55,6 +62,8 @@
     "json-schema-walker": ["json-schema-walker@2.0.0", "", { "dependencies": { "@apidevtools/json-schema-ref-parser": "^11.1.0", "clone": "^2.1.2" } }, "sha512-nXN2cMky0Iw7Af28w061hmxaPDaML5/bQD9nwm1lOoIKEGjHcRGxqWe4MfrkYThYAPjSUhmsp4bJNoLAyVn9Xw=="],
 
     "undici-types": ["undici-types@6.20.0", "", {}, "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="],
+
+    "valibot": ["valibot@1.0.0", "", { "peerDependencies": { "typescript": ">=5" }, "optionalPeers": ["typescript"] }, "sha512-1Hc0ihzWxBar6NGeZv7fPLY0QuxFMyxwYR2sF1Blu7Wq7EnremwY2W02tit2ij2VJT8HcSkHAQqmFfl77f73Yw=="],
 
     "zod": ["zod@3.24.2", "", {}, "sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ=="],
 

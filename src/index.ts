@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 
-import { z } from 'zod';
-import { zValidator } from '@hono/zod-validator';
+import { vValidator } from '@hono/valibot-validator';
+
+import * as v from 'valibot'
 
 const app = new Hono()
 
@@ -9,12 +10,12 @@ app.get('/', (c) => {
 	return c.text('Hello Hono!')
 })
 
-const _apiUserRequest = z.object({
-	limit: z.number().optional()
+const _apiUserRequest = v.object({
+	limit: v.optional(v.number())
 });
 
 app.get('/api/user',
-	zValidator('query', _apiUserRequest),
+	vValidator('query', _apiUserRequest),
 	(c) => {
 		const { limit } = c.req.valid('query');
 

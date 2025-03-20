@@ -3,8 +3,9 @@ import { describeRoute, openAPISpecs } from "hono-openapi";
 import { apiReference } from '@scalar/hono-api-reference'
 
 //import { sValidator } from '@hono/standard-validator';
-//import { validator, resolver } from "hono-openapi/arktype";
 import { validator, resolver } from "hono-openapi/zod";
+//import { validator, resolver } from "hono-openapi/arktype";
+//import { validator, resolver } from "hono-openapi/valibot";
 
 import * as v from 'valibot'
 import { z } from 'zod'
@@ -23,7 +24,11 @@ const _apiUserResponseByZod = z.object({
 
 // arktype
 const _apiUserRequestByArktype = type({
-	limit: "string.integer.parse?",
+	// XXX Cannot create openAPISpecs...
+	//
+	// error: (In: string /^(?:(?!^-0$)-?(?:(?:0|[1-9]\d*)))$/) => Out<number % 1> is not convertible to JSON Schema because it represents a transformation, while JSON Schema only allows validation. Consider creating a Schema from one of its endpoints using `.in` or `.out`.
+	//limit: "string.integer.parse?",
+	limit: "string?",
 });
 
 const _apiUserResponseByArktype = type({
@@ -32,17 +37,26 @@ const _apiUserResponseByArktype = type({
 
 // valibot
 const _apiUserRequestByValibot = v.object({
-	limit: v.optional(v.pipe(
-		v.string(),
-		v.transform((value) => {
-			const num = Number(value);
-			if (isNaN(num) || !isFinite(num)) {
-				return new Error('Invalid number');
-			}
-			return num;
-		}),
-		v.number(),
-	))
+
+	// XXX Cannot create openAPISpecs...
+	//
+	// error: The "transform" action cannot be converted to JSON Schema.
+	// limit: v.optional(v.pipe(
+	// 	v.string(),
+	// 	v.transform((value) => {
+	// 		const num = Number(value);
+	// 		if (isNaN(num) || !isFinite(num)) {
+	// 			return new Error('Invalid number');
+	// 		}
+	// 		return num;
+	// 	}),
+	// 	v.number(),
+	// ))
+	limit: v.optional(v.string())
+});
+
+const _apiUserResponseByValibot = v.object({
+	limit: v.number(),
 });
 
 

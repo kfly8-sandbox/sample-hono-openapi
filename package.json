@@ -4,16 +4,16 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
-    "@hono/arktype-validator": "^2.0.0",
-    "@hono/standard-validator": "^0.1.2",
-    "@hono/valibot-validator": "^0.5.2",
+    // "@hono/arktype-validator": "^2.0.0",
+    // "@hono/standard-validator": "^0.1.2",
+    // "@hono/valibot-validator": "^0.5.2",
     "@hono/zod-validator": "^0.4.3",
     "@scalar/hono-api-reference": "^0.7.2",
     "@valibot/to-json-schema": "^1.0.0",
-    "arktype": "^2.1.10",
+    //"arktype": "^2.1.10",
     "hono": "^4.7.4",
     "hono-openapi": "^0.4.6",
-    "valibot": "^1.0.0",
+    //"valibot": "^1.0.0",
     "zod": "^3.24.2",
     "zod-openapi": "^4.2.3"
   },

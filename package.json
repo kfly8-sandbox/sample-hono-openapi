@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@hono/arktype-validator": "^2.0.0",
+    "@hono/standard-validator": "^0.1.2",
     "@hono/valibot-validator": "^0.5.2",
     "@hono/zod-validator": "^0.4.3",
     "@valibot/to-json-schema": "^1.0.0",

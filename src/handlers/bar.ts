@@ -7,7 +7,7 @@ import { z } from 'zod'
 const app = new Hono();
 
 const _GetRequest = z.object({
-  bar: z.string(),
+  name: z.string(),
 });
 
 const _GetResponse = z.object({
@@ -32,8 +32,8 @@ app.get(
   }),
   validator('query', _GetRequest),
   async (c) => {
-    const { bar } = c.req.valid('query');
-    return c.json({ message: `Hello, ${bar}!` });
+    const { name } = c.req.valid('query');
+    return c.json({ message: `Hello, ${name}!` });
   }
 );
 

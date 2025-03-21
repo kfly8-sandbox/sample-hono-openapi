@@ -7,13 +7,12 @@ import { z } from 'zod'
 const app = new Hono();
 
 const _GetRequest = z.object({
-  foo: z.string(),
+  name: z.string(),
 });
 
 const _GetResponse = z.object({
   message: z.string(),
 });
-
 
 app.get(
   '/foo',
@@ -32,8 +31,8 @@ app.get(
   }),
   validator('query', _GetRequest),
   async (c) => {
-    const { foo } = c.req.valid('query');
-    return c.json({ message: `Hello, ${foo}!` });
+    const { name } = c.req.valid('query')
+    return c.json({ message: `Hello, ${name}!` });
   }
 );
 
